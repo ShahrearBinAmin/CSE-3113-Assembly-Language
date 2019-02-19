@@ -1,0 +1,12 @@
+mov RCX,R10
+mov RBX,0
+
+print_loop:
+	push RCX	
+	mov RDI,fmt_print
+	mov RSI,[array+8*RBX]
+	xor RAX,RAX
+	call printf
+	inc RBX
+	pop RCX
+	loop print_loop	
